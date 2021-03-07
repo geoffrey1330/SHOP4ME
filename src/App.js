@@ -12,7 +12,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div className="grid-container">
             <header>
-              <Link to="/">SHOP 4ME</Link>
+              <Link to="/">SHOP4ME</Link>
               <Link to="/admin"></Link>
             </header>
             <main>
