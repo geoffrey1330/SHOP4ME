@@ -2,6 +2,7 @@ import { CREATE_ORDER, CLEAR_CART, CLEAR_ORDER, FETCH_ORDERS } from "../types";
 import response from "../data.json"
 let orderFetch=undefined;
 export const createOrder = (order) => (dispatch) => {
+  // Sending Data to an Api
  /* fetch("/api/orders", {
     method: "POST",
     headers: {
@@ -12,9 +13,9 @@ export const createOrder = (order) => (dispatch) => {
     .then((res) => res.json())
     .then((data) => {
       dispatch({ type: CREATE_ORDER, payload: data });
-      localStorage.clear("cartItems");
       dispatch({ type: CLEAR_CART });
     });*/
+  // Sending Data using the browser local storage
   localStorage.setItem("orderItems", JSON.stringify(order));
   orderFetch=order;
 
@@ -29,6 +30,9 @@ export const clearOrder = () => (dispatch) => {
   dispatch({ type: CLEAR_ORDER });
 };
 export const fetchOrders = () => (dispatch) => {
+  // Getting Data from an Api
+
+
   /*fetch("/api/orders")
     .then((res) => res.json())
     .then((data) => {
@@ -36,6 +40,9 @@ export const fetchOrders = () => (dispatch) => {
       dispatch({ type: FETCH_ORDERS, payload: data });
 
     });*/
+ // Getting Data from browser LocalStorage
+
+
  /* console.log("beginning",orderFetch)
   localStorage.setItem("FetchorderItems", JSON.stringify(orderFetch));
  // console.log("setItem",JSON.stringify(orderFetch))
